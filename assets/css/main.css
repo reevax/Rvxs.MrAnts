@@ -1,0 +1,7 @@
+@import "tailwindcss";
+@theme {
+  --font-headline: "Berkshire Swash", serif;
+  --font-content: "Raleway", sans-serif;
+  --color-primary: #b44d4f;
+}
+@source "hugo_stats.json";
