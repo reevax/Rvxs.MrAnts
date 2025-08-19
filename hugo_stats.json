@@ -11,7 +11,9 @@
       "title"
     ],
     "classes": [
-      "font-headline"
+      "font-headline",
+      "text-5xl",
+      "text-7xl"
     ],
     "ids": null
   }
