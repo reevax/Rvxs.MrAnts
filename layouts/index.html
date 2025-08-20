@@ -1,5 +1,5 @@
 {{ define "main" }}
-<h1 class="text-7xl">
-    Hi
-</h1>
+{{ partial "hero.html" . }}
+
+{{ partial "section-header.html" (dict "title" "The Bar" "description" "Mr Ant's is a family run bar in the centre of the historic market town of Hexham, Northumberland.") }}
 {{ end }}

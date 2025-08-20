@@ -14,10 +14,20 @@
     {{ with (templates.Defer (dict "key" "global")) }} {{ partial "css.html" . }} {{ end }}
 </head>
 
-<body class="font-headline">
+<body class="font-content">
 
-    {{ block "main" . }}{{ end }}
+    {{ partial "header.html" . }}
 
+    <main class="pt-20">
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    {{ partial "footer.html" . }}
+
+    <script src="js/feather.min.js"></script>
+    <script>
+        feather.replace();
+    </script>
 </body>
 
 </html>

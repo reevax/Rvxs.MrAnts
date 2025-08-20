@@ -1,0 +1,32 @@
+<header class="bg-neutral-800 fixed w-full z-10">
+    <div class="container mx-auto flex items-center justify-between max-w-6xl">
+        <div>
+            <img src="{{ .Site.BaseURL }}/{{ .Site.Params.Logo }}" alt="Mr Ant's Logo" class="block h-20" />
+        </div>
+
+        <nav class="main-navigation hidden lg:flex gap-2 text-[13px] font-bold uppercase text-white h-20">
+            <a href="/"
+                class="border-y-4 border-y-transparent hover:border-b-primary flex items-center h-full transition-colors duration-300">Home</a>
+            <a href="/drink"
+                class="border-y-4 border-y-transparent hover:border-b-primary flex items-center h-full transition-colors duration-300">Food
+                & Drink</a>
+            <a href="/events-offers"
+                class="border-y-4 border-y-transparent hover:border-b-primary flex items-center h-full transition-colors duration-300">Events
+                & Offers</a>
+            <a href="/hire"
+                class="border-y-4 border-y-transparent hover:border-b-primary flex items-center h-full transition-colors duration-300">Hire</a>
+            <a href="/gallery"
+                class="border-y-4 border-y-transparent hover:border-b-primary flex items-center h-full transition-colors duration-300">Gallery</a>
+            <a href="/contact-us"
+                class="border-y-4 border-y-transparent hover:border-b-primary flex items-center h-full transition-colors duration-300">Contact</a>
+        </nav>
+
+        <div class="mobile-menu-toggle lg:hidden flex items-center">
+            <!-- Hamburger menu button -->
+        </div>
+    </div>
+
+    <div class="mobile-menu">
+        <!-- Mobile navigation + opening hours -->
+    </div>
+</header>

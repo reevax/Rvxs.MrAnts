@@ -2,6 +2,9 @@ baseURL = 'https://mrants.co.uk/'
 languageCode = 'en-gb'
 title = 'Mr Ant&#39;s Bar'
 
+[params]
+  Logo = 'img/logo.png'
+
 [build]
   [build.buildStats]
     enable = true
