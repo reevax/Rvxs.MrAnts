@@ -2,4 +2,106 @@
 {{ partial "hero.html" . }}
 
 {{ partial "section-header.html" (dict "title" "The Bar" "description" "Mr Ant's is a family run bar in the centre of the historic market town of Hexham, Northumberland.") }}
+
+<div class="p-16">
+    <div class="container max-w-6xl flex flex-col md:flex-row gap-4 mx-auto text-base/8">
+        <div class="space-y-4">
+            <p>
+                Mr Ant's is a friendly, family run bar that transforms into a lively, vibrant venue; serving an
+                excellent variety of beers, wines, spirits and cocktails.
+            </p>
+            <p>
+                Enjoy live music? Come down on Friday evenings when we host a mix of great bands, playing everything
+                from Rock to Pop to Acoustic. Be sure to visit our events page to see a list of upcoming artists and
+                other events hosted at Mr Ant's.
+            </p>
+        </div>
+        <div class="space-y-4">
+            <p>
+                Interested in hiring the bar out as a private venue? Check out our hire page for full details – we can
+                even come to you with our Mobile Bar Service!
+            </p>
+            <p>
+                Hungry? Come and try out our new café menu! Served from Wednesday to Saturday from 12 noon until 3pm,
+                our food is homemade and locally sourced. Great food at unbelievable prices - you can't go wrong. You
+                can view our new menu on the food & drink page.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="hidden lg:flex">
+    <div class="w-1/2 bg-primary flex items-center justify-center">
+        <h1 class="text-xl/12 text-white max-w-96">
+            At night, we transform into a lively, vibrant bar; serving an excellent variety of beers, wines, spirits and
+            cocktails.
+        </h1>
+    </div>
+    <div class="w-1/2">
+        <img src="img/cocktails.jpg" alt="Mr Ant's Bar" class="w-full h-auto object-cover">
+    </div>
+</div>
+
+<div class="bg-neutral-100">
+
+    {{ partial "section-header.html" (dict "title" "News" "description" "All the latest from Mr Ant's") }}
+
+    <div class="p-16">
+        <div class="container max-w-6xl flex flex-col gap-4 mx-auto">
+            <div class="bg-white space-y-4 w-full p-8">
+                <h1 class="text-xl">
+                    Take Away Cocktails
+                </h1>
+                <p>
+                    Enjoy one of our fabulous cocktails at home. Available for delivery £4.50 each with a 50p return on your bottle.
+                </p>
+            </div>
+            <div class="bg-white space-y-4 w-full p-8">
+                <h1 class="text-xl">
+                    Quiz Night  
+                </h1>
+                <p class="font-semibold">
+                    Thursday 8pm
+                </p>
+                <p>
+                    Join us for our great Grid Quiz Loads of prizes Free hot dogs and chips!
+                </p>
+            </div>
+            <div class="bg-white space-y-4 w-full p-8">
+                <h1 class="text-xl">
+                    Cocktails BOGOF
+                </h1>
+                <p>
+                    Enjoy our amazing BOGOF on all our cocktails - All day every day!!
+                </p>
+            </div>
+            <div class="bg-white space-y-4 w-full p-8">
+                <h1 class="text-xl">
+                    Private Hire and Mobile Bar Service
+                </h1>
+                <p>
+                    See our Terms and Conditions by going to the link at the bottom of our home page. To discuss your needs just contact us by email, give us a ring or pop in and speak to a member of staff.
+                </p>
+            </div>
+            <div class="bg-white space-y-4 w-full p-8">
+                <h1 class="text-xl">
+                    Live Music Every Friday
+                </h1>
+                <p>
+                    We have the great music from a mix of great band Rock to Pop to Acoustic. Get down early to get a good spot. All starts about 9pm.
+                </p>
+            </div>
+            <div class="bg-white space-y-4 w-full p-8">
+                <h1 class="text-xl">
+                    Cocktail Masterclass
+                </h1>
+                <p>
+                    Celebrating with friends and want to have a fun cocktail lesson. Private hire or VIP space for your own cocktail class. Packages made to suit and can include nibbles and games. Contact us for full details.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
 {{ end }}

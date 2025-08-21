@@ -1,0 +1,42 @@
+{{ define "main" }}
+
+{{ partial "hero.html" . }}
+
+{{ partial "section-header.html" (dict "title" "Events & Offers" "description" "") }}
+
+<div class="p-16">
+    <div class="container max-w-6xl mx-auto flex flex-col lg:flex-row gap-8 justify-center">
+        <div class="basis-1/2 space-y-8">
+            <h1 class="text-center font-semibold text-2xl">
+                Weekly Events
+            </h1>
+            <div class="space-y-4">
+                {{ range .Params.events }}
+                    <div class="flex gap-4 items-center rounded-lg bg-neutral-50 p-4">
+                        <div>
+                            <i data-feather="message-square"></i>
+                        </div>
+                        <div class="space-y-1">
+                            <p class="font-semibold">
+                                {{ .name }}
+                            </p>
+                            <p>
+                                {{ .description}}
+                            </p>
+                        </div>
+                    </div>
+                {{ end }}
+            </div>
+        </div>
+        <div class="basis-1/2 space-y-8">
+            <h1 class="text-center font-semibold text-2xl">
+                Live Music
+            </h1>
+            <p class="text-center text-base/8">
+                Kicks off every Friday at 8:30pm.
+            </p>
+        </div>
+    </div>
+</div>
+
+{{ end }}

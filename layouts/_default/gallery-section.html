@@ -1,0 +1,102 @@
+{{ define "main" }}
+<div class="container mx-auto px-4 py-16">
+
+    <!-- Breadcrumb -->
+    <nav class="mb-8">
+        <a href="/gallery/" class="text-blue-600 hover:text-blue-800">Gallery</a>
+        <span class="mx-2 text-gray-500">›</span>
+        <span class="text-gray-700">{{ .Title }}</span>
+    </nav>
+
+    <!-- Header -->
+    <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold mb-4">{{ .Params.gallery_title | default .Title }}</h1>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">{{ .Description }}</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-12" id="gallery-grid">
+    {{ range $index, $image := .Resources.ByType "image" }}
+        {{ $thumb := .Resize "400x300 webp q80" }}
+        {{ $large := .Resize "1200x800 webp q90" }}
+        
+        <div class="gallery-item group cursor-pointer" 
+            data-index="{{ $index }}"
+            data-large="{{ $large.RelPermalink }}">
+        <img src="{{ $thumb.RelPermalink }}" 
+            alt="{{ $.Title }}"
+            class="w-full h-64 object-cover rounded-lg transition-transform group-hover:scale-105 shadow-md hover:shadow-lg">
+        </div>
+    {{ end }}
+    </div>
+
+    <!-- Back to Gallery -->
+    <div class="text-center mt-12">
+        <a href="/gallery/"
+            class="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+            <svg class="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            Back to Gallery
+        </a>
+    </div>
+</div>
+
+{{ partial "modal.html" . }}
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const images = Array.from(galleryItems).map(item => item.dataset.large);
+  let currentIndex = 0;
+  
+  // Initialize MicroModal
+  MicroModal.init({
+    disableScroll: true,
+    disableFocus: false,
+    awaitCloseAnimation: true
+  });
+  
+  // Set total images
+  document.getElementById('total-num').textContent = images.length;
+  
+  // Add click handlers to gallery items
+  galleryItems.forEach((item, index) => {
+    item.addEventListener('click', () => {
+      currentIndex = index;
+      updateModalImage();
+      MicroModal.show('gallery-modal');
+    });
+  });
+  
+  // Navigation handlers
+  document.getElementById('prev-btn').addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateModalImage();
+  });
+  
+  document.getElementById('next-btn').addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateModalImage();
+  });
+  
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (!document.getElementById('gallery-modal').classList.contains('is-open')) return;
+    
+    if (e.key === 'ArrowLeft') {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      updateModalImage();
+    } else if (e.key === 'ArrowRight') {
+      currentIndex = (currentIndex + 1) % images.length;
+      updateModalImage();
+    }
+  });
+  
+  function updateModalImage() {
+    document.getElementById('modal-image').src = images[currentIndex];
+    document.getElementById('current-num').textContent = currentIndex + 1;
+  }
+});
+</script>
+
+{{ end }}

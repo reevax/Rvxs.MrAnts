@@ -1,6 +1,263 @@
 {{ define "main" }}
+
 {{ partial "hero.html" . }}
-<h1 class="text-7xl">
-    Hi
-</h1>
+
+{{ partial "section-header.html" (dict "title" "Drinks Menu" "description" "Mr Ant's Cocktails are BOGOF ALL day EVERY day!") }}
+
+<div class="p-16">
+    <div class="container max-w-6xl flex flex-col justify-center items-center mx-auto">
+        <div class="space-y-8">
+            <div>
+                <p class="font-semibold">
+                    Martinis - £8.95
+                </p>
+                <ul class="space-y-2">
+                    <li>
+                        Expresso - <span class="text-primary">Vodka Khhula Expresso and Sugar Syrup</span>
+                    </li>
+                    <li>
+                        Pornstar - <span class="text-primary">Vanilla Vodka Pessoa Passion Fruit Purée
+                            Pineapple and a shot of prosecco</span>
+                    </li>
+                    <li>
+                        Cosmopolitan - <span class="text-primary">Gin Vermouth and Bitters</span>
+                    </li>
+                    <li>
+                        French - <span class="text-primary">Vodka Chambord and Pineapple</span>
+                    </li>
+                    <li>
+                        Chocolate Cookie - <span class="text-primary">Chocolate Cookie Syrup Vodka
+                            Amaretto Baileys and Milk</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <p class="font-semibold">
+                    Fizzy - £8.95
+                </p>
+                <ul class="space-y-2">
+                    <li>
+                        Blood Orange Bubble - <span class="text-primary">Creme de Cassis and Prosecco</span>
+                    </li>
+                    <li>
+                        Fleur 75 - <span class="text-primary">Bombay Sapphire Elderflower Liqueur lemon and
+                            Prosecco</span>
+                    </li>
+                    <li>
+                        Rhubarb Fizz - <span class="text-primary">Rhubarb Gin and Prosecco</span>
+                    </li>
+                    <li>
+                        Pink Gin Prosecco - <span class="text-primary">Gin Pink Lemonade and Prosecco</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <p class="font-semibold">
+                    Mr Ant's Favs - £8.25
+                </p>
+                <ul class="space-y-2">
+                    <li>
+                        Amaretto Sours - <span class="text-primary">Amaretto Lime Sugar</span>
+                    </li>
+                    <li>
+                        White/ Black Russian - <span class="text-primary">Kahula Vodka Milk/Pepsi</span>
+                    </li>
+                    <li>
+                        Gin and Sonic - <span class="text-primary">Gin Blue Curacao Tonic and Lime</span>
+                    </li>
+                    <li>
+                        Tennessee Milkshake - <span class="text-primary">Jack Daniels Baileys Gingerbread Syrup and
+                            Milk</span>
+                    </li>
+                    <li>
+                        Dr Pepper - <span class="text-primary">Amaretto Vodka and Pepsi</span>
+                    </li>
+                    <li>
+                        Just Peachy - <span class="text-primary">Bombay Sapphire Peach Schnapps Tonic and Lime</span>
+                    </li>
+                    <li>
+                        Jelly Baby - <span class="text-primary">Vodka Triple Sec Blackcurrant Syrup and Lemonade</span>
+                    </li>
+                    <li>
+                        Clockwork Orange - <span class="text-primary">Gin Triple Sec OJ and Lemon</span>
+                    </li>
+                    <li>
+                        Blueberry Lagoon - <span class="text-primary">Blueberry Vodka Blue Curacao and Lemonade</span>
+                    </li>
+                    <li>
+                        WooWoo - <span class="text-primary">Mango or Raspberry Vodka Peach Schnapps Cranberry and
+                            Lime</span>
+                    </li>
+                    <li>
+                        Skittles - <span class="text-primary">Blue Curacao Taboo Orange and Lemonade</span>
+                    </li>
+                    <li>
+                        Zombie - <span class="text-primary">White Rum Spiced Rum OJ Pineapple Grenadine and Lime</span>
+                    </li>
+                    <li>
+                        Moscow Mule - <span class="text-primary">Vodka Ginger Ale and Lime</span>
+                    </li>
+                    <li>
+                        Long Island Iced Tea - <span class="text-primary">Vodka Gin Rum Triple Sec Tequila Sugar Syrup
+                            and Lime</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <p class="font-semibold">
+                    Mocktails - £3.95
+                </p>
+                <ul class="space-y-2">
+                    <li>
+                        Passion fruit Fizz - <span class="text-primary">OJ Passionfruit Puree and Soda</span>
+                    </li>
+                    <li>
+                        Elderflower Punch - <span class="text-primary">Cranberry and OJ Elderflower Cordial and
+                            Lime</span>
+                    </li>
+                    <li>
+                        Virgin Mule - <span class="text-primary">Lime Ginger Beer and Bitters</span>
+                    </li>
+                    <li>
+                        Virgin Ant - <span class="text-primary">Cranberry Pineapple and Soda</span>
+                    </li>
+                    <li>
+                        Tequiless Sunset - <span class="text-primary">Orange Lime and Grenadine</span>
+                    </li>
+                    <li>
+                        Strawberry Punch - <span class="text-primary">Strawberry Purée OJ Lime and Lemon</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <p class="font-semibold">
+                    Wines
+                </p>
+                <ul class="space-y-2">
+                    <li>
+                        Via Alta Sauvignon Blanc - <span class="text-primary">Chilean White Wine</span>
+                        <ul class="list-disc list-inside pl-6">
+                            <li>
+                                175ml - £3.40
+                            </li>
+                            <li>
+                                250ml - £4.20
+                            </li>
+                            <li>
+                                Bottle - £12.50
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Bello Tramonto Pinot Grigio - <span class="text-primary">Italian White Wine</span>
+                        <ul class="list-disc list-inside pl-6">
+                            <li>
+                                175ml - £3.80
+                            </li>
+                            <li>
+                                250ml - £4.80
+                            </li>
+                            <li>
+                                Bottle - £13.50
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Parle Vous Malbec - <span class="text-primary">French Red Wine</span>
+                        <ul class="list-disc list-inside pl-6">
+                            <li>
+                                175ml - £3.40
+                            </li>
+                            <li>
+                                250ml - £4.40
+                            </li>
+                            <li>
+                                Bottle - £12.50
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Jarrah Wood Shiraz Cabernet Sauvignon - <span class="text-primary">Australian Red Wine</span>
+                        <ul class="list-disc list-inside pl-6">
+                            <li>
+                                175ml - £3.40
+                            </li>
+                            <li>
+                                250ml - £4.50
+                            </li>
+                            <li>
+                                Bottle - £13.50
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Healy & Gray Zinfandel - <span class="text-primary">Rose</span>
+                        <ul class="list-disc list-inside pl-6">
+                            <li>
+                                175ml - £3.70
+                            </li>
+                            <li>
+                                250ml - £4.70
+                            </li>
+                            <li>
+                                Bottle - £13.50
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Prosecco Emotivo - <span class="text-primary">Italian Prosecco</span>
+                        <ul class="list-disc list-inside pl-6">
+                            <li>
+                                125ml - £3.95
+                            </li>
+                            <li>
+                                Bottle - £18.00
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <p class="text-sm italic">
+                    Wine also available in 125ml measures
+                </p>
+            </div>
+
+            <div>
+                <p class="font-semibold">
+                    Hot Drinks
+                </p>
+                <ul class="space-y-2">
+                    <li>
+                        Americano - £1.70
+                    </li>
+                    <li>
+                        Latte - £2.00
+                    </li>
+                    <li>
+                        Cappuccino - £2.00
+                    </li>
+                    <li>
+                        Espresso - £1.50
+                    </li>
+                    <li>
+                        Mocha - £2.00
+                    </li>
+                    <li>
+                        English Breakfast Tea - £1.50
+                    </li>
+                    <li>
+                        Earl Grey Tea - £1.50
+                    </li>
+                    <li>
+                        Hot Chocolate - <span class="text-primary">Add Marshmallows for 20p</span> - £2.00
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
 {{ end }}
