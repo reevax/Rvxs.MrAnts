@@ -5,6 +5,11 @@ title = 'Mr Ant&#39;s Bar'
 [params]
   Logo = 'img/logo.png'
 
+[[menu.main]]
+  name = "Gallery"
+  url = "/gallery/"
+  weight = 10
+
 [build]
   [build.buildStats]
     enable = true

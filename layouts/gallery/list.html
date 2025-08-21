@@ -1,0 +1,29 @@
+{{ define "main" }}
+<div class="p-16">
+    <div class="container mx-auto max-w-6xl">
+
+        {{ partial "section-header.html" (dict "title" "Gallery" "description" "") }}
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            {{ range .Pages }}
+            <div class="relative">
+                <a href="{{ .RelPermalink }}" class="block">
+                    {{ $images := .Resources.ByType "image" }}
+                    {{ $firstImage := index $images 0 }}
+                    {{ $webpImage := $firstImage.Resize "400x webp q85" }}
+                    <img src="{{ $webpImage.RelPermalink }}" alt="{{ .Title }}" class="w-full h-auto aspect-square object-cover object-center">
+                    <span class="absolute bottom-0 left-0 right-0 bg-primary bg-opacity-50 text-white text-center py-2 px-4">
+                        {{ if .Params.title }}
+                        {{ .Params.title }}
+                        {{ else }}
+                        {{ .Title }}
+                        {{ end }}
+                    </span>
+                </a>
+            </div>
+            {{ end }}
+        </div>
+
+    </div>
+</div>
+{{ end }}
