@@ -1,10 +1,10 @@
-<header class="bg-neutral-800 fixed w-full z-10">
+<header class="bg-neutral-800 fixed w-full z-10 px-8 md:px-16">
     <div class="container mx-auto flex items-center justify-between max-w-6xl">
         <div>
             <img src="{{ .Site.BaseURL }}/{{ .Site.Params.Logo }}" alt="Mr Ant's Logo" class="block h-20" />
         </div>
 
-        <nav class="main-navigation hidden lg:flex gap-2 text-[13px] font-bold uppercase text-white h-20">
+        <nav class="main-navigation hidden lg:flex gap-4 text-[13px] font-bold uppercase text-white h-20">
             <a href="/"
                 class="border-y-4 border-y-transparent hover:border-b-primary flex items-center h-full transition-colors duration-300">Home</a>
             <a href="/drink"
@@ -21,12 +21,108 @@
                 class="border-y-4 border-y-transparent hover:border-b-primary flex items-center h-full transition-colors duration-300">Contact</a>
         </nav>
 
-        <div class="mobile-menu-toggle lg:hidden flex items-center">
+        <div class="mobile-menu-toggle lg:hidden flex items-center overflow-hidden w-8 h-8 relative">
             <!-- Hamburger menu button -->
+            <button onclick="toggleNavigation()" class="text-white focus:outline-none">
+                <!-- Close Icon -->
+                <svg class="mobile-menu-icon-close h-8 w-8 absolute inset-0 -translate-y-8 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+
+                <!-- Hamburger Icon -->
+                <svg class="mobile-menu-icon-hamburger h-8 w-8 absolute inset-0 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
         </div>
     </div>
 
-    <div class="mobile-menu">
-        <!-- Mobile navigation + opening hours -->
+    <div class="mobile-menu fixed inset-0 bg-neutral-800 top-20 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="flex-1 flex flex-col items-center justify-center p-8 gap-8">
+
+            <h1 class="font-headline text-3xl text-white">
+                Mr Ant's Bar & Cafe
+            </h1>
+
+            <nav class="main-navigation flex flex-col items-center gap-2 text-[13px] font-bold uppercase text-white">
+                <a href="/"
+                    class="border-y-4 border-y-transparent hover:border-b-primary flex items-center h-full transition-colors duration-300">Home</a>
+                <a href="/drink"
+                    class="border-y-4 border-y-transparent hover:border-b-primary flex items-center h-full transition-colors duration-300">Food
+                    & Drink</a>
+                <a href="/events-offers"
+                    class="border-y-4 border-y-transparent hover:border-b-primary flex items-center h-full transition-colors duration-300">Events
+                    & Offers</a>
+                <a href="/hire"
+                    class="border-y-4 border-y-transparent hover:border-b-primary flex items-center h-full transition-colors duration-300">Hire</a>
+                <a href="/gallery"
+                    class="border-y-4 border-y-transparent hover:border-b-primary flex items-center h-full transition-colors duration-300">Gallery</a>
+                <a href="/contact-us"
+                    class="border-y-4 border-y-transparent hover:border-b-primary flex items-center h-full transition-colors duration-300">Contact</a>
+            </nav>
+
+            <div class="flex-1"></div>
+
+            <table class="text-white text-[13px] [&_td]:px-4">
+                <tbody>
+                    <tr>
+                        <td>
+                            Monday
+                        </td>
+                        <td>
+                            12:00pm - 11:00pm
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Tuesday
+                        </td>
+                        <td>
+                            12:00pm - 11:00pm
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Wednesday
+                        </td>
+                        <td>
+                            12:00pm - 11:00pm
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Thursday
+                        </td>
+                        <td>
+                            12:00pm - 12:00am
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Friday
+                        </td>
+                        <td>
+                            12:00pm - 12:30am
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Saturday
+                        </td>
+                        <td>
+                            12:00pm - 01:30am
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Sunday
+                        </td>
+                        <td>
+                            3:00pm - 11:00pm
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </header>

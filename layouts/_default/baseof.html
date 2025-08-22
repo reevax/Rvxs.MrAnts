@@ -13,8 +13,10 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
     {{ with (templates.Defer (dict "key" "global")) }} {{ partial "css.html" . }} {{ end }}
 </head>
 
@@ -28,10 +30,23 @@
 
     {{ partial "footer.html" . }}
 
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/micromodal/0.4.10/micromodal.min.js"></script>
     <script src="/js/feather.min.js"></script>
     <script>
         feather.replace();
+        const lightbox = GLightbox({ selector: '.glightbox' });
+
+        function toggleNavigation() {
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const closeIcon = document.querySelector('.mobile-menu-icon-close');
+            const hamburgerIcon = document.querySelector('.mobile-menu-icon-hamburger');
+
+            mobileMenu.classList.toggle('opacity-0');
+            mobileMenu.classList.toggle('pointer-events-none');
+            closeIcon.classList.toggle('-translate-y-8');
+            hamburgerIcon.classList.toggle('translate-y-8');
+        }
     </script>
 </body>
 

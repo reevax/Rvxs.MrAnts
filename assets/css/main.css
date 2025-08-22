@@ -5,3 +5,4 @@
   --color-primary: #b44d4f;
 }
 @source "hugo_stats.json";
+@source inline('{translate-y-8}')
